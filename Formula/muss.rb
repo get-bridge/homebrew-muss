@@ -23,13 +23,13 @@ class Muss < Formula
 
   desc "For when your docker-compose project is a mess"
   homepage "https://github.com/instructure/muss"
-  version "v0.1"
+  version "v0.2"
   url "https://github.com/instructure/muss/releases/download/#{version}/#{basename}"
   sha256({
-    "muss-darwin-386.zip" => "fcc530d6b059cac43ea172f9aff83b92fd1f9858f35bf1e4b488708f7ede1677",
-    "muss-darwin-amd64.zip" => "3185d43296b1b1126a7f80fee92c904bacdbbd620266980dc2973bfc0540a101",
-    "muss-linux-386.zip" => "66c619b2abdb6bcfc78781e2d5c53a49672b0f61aafbb351114cd7ef9557f353",
-    "muss-linux-amd64.zip" => "1f739da130bb7d2d29b3d26210c467438181814fb18980ececa429ef9679cbac",
+    "muss-darwin-386.zip" => "e32194b3481a69877e3141524d75590efac16752b22f9ff381b924d79c1b322c",
+    "muss-darwin-amd64.zip" => "ce6c89d50d1c26ff981425c1f902134e966d91a394f28b88f309d7f6e71c9b74",
+    "muss-linux-386.zip" => "2521a2c8d7b8847e61ab41168990c10a7c7c9dd67036d9ba95fe0e3d02206964",
+    "muss-linux-amd64.zip" => "fb11323b1b6433ac50222f9d9b9c22d203d43ac9b34ceefba37d5500d58cecc5",
   }[basename])
 
   def install
