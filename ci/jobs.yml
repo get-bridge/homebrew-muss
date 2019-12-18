@@ -1,0 +1,9 @@
+---
+- project:
+    name: Muss Homebrew Tap
+    repo: homebrew-muss
+    folder: Bridge Shared
+    jobs:
+      - premerge:
+          name: homebrew-muss
+          script: ci/premerge/Jenkinsfile

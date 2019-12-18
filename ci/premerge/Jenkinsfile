@@ -1,0 +1,18 @@
+pipeline {
+  agent {
+    label "docker"
+  }
+  options {
+    ansiColor('xterm')
+  }
+  environment {
+    DOCKER_IMAGE = "ruby:2.3-alpine"
+  }
+  stages {
+    stage('Test') {
+      steps {
+        sh """cat Formula/*.rb | docker run $DOCKER_IMAGE ruby -c"""
+      }
+    }
+  }
+}
