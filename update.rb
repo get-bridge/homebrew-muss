@@ -2,18 +2,32 @@
 # rubocop: disable all
 
 def usage
-  puts "#{$0} version path_to_shasums"
+  puts "#{$0} version [path_to_shasums]"
   exit 1
 end
 
-version = ARGV.shift or usage
-sums = ARGV.shift or usage
+$version = ARGV.shift or usage
+
+def sums
+  if ARGV.empty?
+    `curl -fLSs https://github.com/instructure/muss/releases/download/#{$version}/SHA256SUMS`.tap do |s|
+      raise s if $? != 0
+    end.split("\n")
+  else
+    path = ARGV.first
+    if path == "-"
+      STDIN.readlines
+    else
+      File.readlines(path)
+    end
+  end.map(&:chomp)
+end
 
 subs = {
-  "version" => version
+  "version" => $version
 }
 
-(sums == "-" ? STDIN.readlines : File.readlines(sums)).map(&:chomp).each do |line|
+sums.each do |line|
   sha, name = line.split(/ +/)
   subs[%("#{name}")] = sha
 end
