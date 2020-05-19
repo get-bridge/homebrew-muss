@@ -6,7 +6,7 @@ class Muss < Formula
   end
 
   def self.go_arch
-    arch = OS.mac? ? ::MacOS.preferred_arch.to_s : `arch`.chomp
+    arch = OS.mac? ? ::MacOS.preferred_arch.to_s : `uname -m`.chomp
     case arch
     when "x86_64"
       "amd64"
