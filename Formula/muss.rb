@@ -7,7 +7,7 @@ class Muss < Formula
 
   def self.go_arch
     arch = ::Hardware::CPU.arch
-    case arch
+    case arch.to_s
     when "x86_64"
       "amd64"
     when "i386"
