@@ -1,0 +1,14 @@
+name: build
+
+on:
+  push: {}
+  repository_dispatch:
+    types: [upload]
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      # general setup
+      - uses: actions/checkout@v2
+      - run: cat Formula/*.rb | docker run ruby:2.3-alpine ruby -c
