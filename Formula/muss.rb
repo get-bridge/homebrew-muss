@@ -22,9 +22,9 @@ class Muss < Formula
   end
 
   desc "For when your docker-compose project is a mess"
-  homepage "https://github.com/instructure-bridge/muss"
+  homepage "https://github.com/get-bridge/muss"
   version "v0.7"
-  url "https://github.com/instructure-bridge/muss/releases/download/#{version}/#{basename}"
+  url "https://github.com/get-bridge/muss/releases/download/#{version}/#{basename}"
   sha256({
     "muss-darwin-386.zip" => "d2aedc82e2e81c888544f622d4efaaf42c5b09a94f1dbee2395b31f39f476d08",
     "muss-darwin-amd64.zip" => "2d880502bdb0152d821f47c5eef90da591db80ce77171e5c810eee8f396e72a0",
