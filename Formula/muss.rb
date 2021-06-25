@@ -5,35 +5,35 @@
 class Muss < Formula
   desc ""
   homepage ""
-  version "0.8"
+  version "0.9"
   bottle :unneeded
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/get-bridge/muss/releases/download/v0.8/muss_0.8_Darwin_x86_64.tar.gz"
-      sha256 "c258c7a91b7b92e5d24bb80ddbf28de258b473f5700a46b41e6b3cb53372e759"
+      url "https://github.com/get-bridge/muss/releases/download/v0.9/muss_0.9_Darwin_x86_64.tar.gz"
+      sha256 "afaa616a26bb1501d386e12656780074f0a240063635db05e068208fcce38e36"
     end
     if Hardware::CPU.arm?
-      url "https://github.com/get-bridge/muss/releases/download/v0.8/muss_0.8_Darwin_arm64.tar.gz"
-      sha256 "524abf6bce5c000a1984274b30096e7aa9c6b54aa0b83cd7fecad237b1e1c9e0"
+      url "https://github.com/get-bridge/muss/releases/download/v0.9/muss_0.9_Darwin_arm64.tar.gz"
+      sha256 "6bdbb5e6a442260a26eb51da2bbfacb80161de94c9e3d46ba8b4b9e05b000485"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/get-bridge/muss/releases/download/v0.8/muss_0.8_Linux_x86_64.tar.gz"
-      sha256 "9b6b5f9220ca789be60887d1a682ed80d9d28a883a05482e04d5f2c1f7a6ba86"
+      url "https://github.com/get-bridge/muss/releases/download/v0.9/muss_0.9_Linux_x86_64.tar.gz"
+      sha256 "eec3abea77abb73db2fee717afbc25140f2c673b52bab376037357ce8747fa2b"
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/get-bridge/muss/releases/download/v0.8/muss_0.8_Linux_arm64.tar.gz"
-      sha256 "b8cb8add0689d4f796e30e32ed8a08a4fa1b0ccbff4d27e460be6fc3fa65d604"
+      url "https://github.com/get-bridge/muss/releases/download/v0.9/muss_0.9_Linux_arm64.tar.gz"
+      sha256 "0b60285d703e3140431c74f807656f439d56da347d3fd5ba0b1a8b1c833edc27"
     end
   end
 
   depends_on "vault"
 
   def install
-    make install
+    bin.install "muss"
   end
 
   test do
