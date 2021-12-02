@@ -6,7 +6,6 @@ class Muss < Formula
   desc ""
   homepage ""
   version "0.9"
-  bottle :unneeded
 
   on_macos do
     if Hardware::CPU.intel?
