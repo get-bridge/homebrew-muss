@@ -5,27 +5,27 @@
 class Muss < Formula
   desc ""
   homepage ""
-  version "0.9"
+  version "0.10"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/get-bridge/muss/releases/download/v0.9/muss_0.9_Darwin_x86_64.tar.gz"
-      sha256 "afaa616a26bb1501d386e12656780074f0a240063635db05e068208fcce38e36"
+      url "https://github.com/get-bridge/muss/releases/download/v0.10/muss_0.10_Darwin_x86_64.tar.gz"
+      sha256 "f0d45c312464a531542f28bae8ffe36e9331b85eade42f9fe915abc0126127e6"
     end
     if Hardware::CPU.arm?
-      url "https://github.com/get-bridge/muss/releases/download/v0.9/muss_0.9_Darwin_arm64.tar.gz"
-      sha256 "6bdbb5e6a442260a26eb51da2bbfacb80161de94c9e3d46ba8b4b9e05b000485"
+      url "https://github.com/get-bridge/muss/releases/download/v0.10/muss_0.10_Darwin_arm64.tar.gz"
+      sha256 "6e388d112089208350ba681f08612af1e2beb2d54d915f878338a291cab747f5"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/get-bridge/muss/releases/download/v0.9/muss_0.9_Linux_x86_64.tar.gz"
-      sha256 "eec3abea77abb73db2fee717afbc25140f2c673b52bab376037357ce8747fa2b"
+      url "https://github.com/get-bridge/muss/releases/download/v0.10/muss_0.10_Linux_x86_64.tar.gz"
+      sha256 "11fc7f3061aa177cfefa88043597d220bf83e51f991bc513d65c3176818303ef"
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/get-bridge/muss/releases/download/v0.9/muss_0.9_Linux_arm64.tar.gz"
-      sha256 "0b60285d703e3140431c74f807656f439d56da347d3fd5ba0b1a8b1c833edc27"
+      url "https://github.com/get-bridge/muss/releases/download/v0.10/muss_0.10_Linux_arm64.tar.gz"
+      sha256 "e829fcd1884ae0f68e1f0b839e951e90f360013db5fd3d03f8c5c97ca2bdda7d"
     end
   end
 

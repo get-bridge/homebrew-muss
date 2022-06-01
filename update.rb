@@ -10,7 +10,7 @@ $version = ARGV.shift or usage
 
 def sums
   if ARGV.empty?
-    `curl -fLSs https://github.com/get-bridge/muss/releases/download/#{$version}/SHA256SUMS`.tap do |s|
+    `curl -fLSs https://github.com/get-bridge/muss/releases/download/#{$version}/checksums.txt`.tap do |s|
       raise s if $? != 0
     end.split("\n")
   else
