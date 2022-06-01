@@ -5,35 +5,47 @@
 class Muss < Formula
   desc ""
   homepage ""
-  version "0.9"
+  version "0.10"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/get-bridge/muss/releases/download/v0.9/muss_0.9_Darwin_x86_64.tar.gz"
-      sha256 "afaa616a26bb1501d386e12656780074f0a240063635db05e068208fcce38e36"
-    end
     if Hardware::CPU.arm?
-      url "https://github.com/get-bridge/muss/releases/download/v0.9/muss_0.9_Darwin_arm64.tar.gz"
-      sha256 "6bdbb5e6a442260a26eb51da2bbfacb80161de94c9e3d46ba8b4b9e05b000485"
+      url "https://github.com/get-bridge/muss/releases/download/v0.10/muss_0.10_Darwin_arm64.tar.gz"
+      sha256 "0b6cba7229298d0d3d3880e0da2ad6695d5b21e99c6b5b03e6b064de27e7f0af"
+
+      def install
+        bin.install "muss"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/get-bridge/muss/releases/download/v0.10/muss_0.10_Darwin_x86_64.tar.gz"
+      sha256 "7a1c3752a328a574001a72203b969e1dd0b14568c78cf1d0f165628c92eb2fb5"
+
+      def install
+        bin.install "muss"
+      end
     end
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/get-bridge/muss/releases/download/v0.9/muss_0.9_Linux_x86_64.tar.gz"
-      sha256 "eec3abea77abb73db2fee717afbc25140f2c673b52bab376037357ce8747fa2b"
-    end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/get-bridge/muss/releases/download/v0.9/muss_0.9_Linux_arm64.tar.gz"
-      sha256 "0b60285d703e3140431c74f807656f439d56da347d3fd5ba0b1a8b1c833edc27"
+      url "https://github.com/get-bridge/muss/releases/download/v0.10/muss_0.10_Linux_arm64.tar.gz"
+      sha256 "86676f8b1400c8e3b7c1094199a22d43c35b770c375986fce908520d26904c96"
+
+      def install
+        bin.install "muss"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/get-bridge/muss/releases/download/v0.10/muss_0.10_Linux_x86_64.tar.gz"
+      sha256 "4b67bc4abb4eec5ae71082350b75eceb0cac4d37deaa4ba5271fce8fb767f0ca"
+
+      def install
+        bin.install "muss"
+      end
     end
   end
 
   depends_on "vault"
-
-  def install
-    bin.install "muss"
-  end
 
   test do
     system bin/"muss", "help"
