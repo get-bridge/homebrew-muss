@@ -10,7 +10,7 @@ class Muss < Formula
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/get-bridge/muss/releases/download/v0.10/muss_0.10_Darwin_arm64.tar.gz"
-      sha256 "0b6cba7229298d0d3d3880e0da2ad6695d5b21e99c6b5b03e6b064de27e7f0af"
+      sha256 "6e388d112089208350ba681f08612af1e2beb2d54d915f878338a291cab747f5"
 
       def install
         bin.install "muss"
@@ -18,7 +18,7 @@ class Muss < Formula
     end
     if Hardware::CPU.intel?
       url "https://github.com/get-bridge/muss/releases/download/v0.10/muss_0.10_Darwin_x86_64.tar.gz"
-      sha256 "7a1c3752a328a574001a72203b969e1dd0b14568c78cf1d0f165628c92eb2fb5"
+      sha256 "f0d45c312464a531542f28bae8ffe36e9331b85eade42f9fe915abc0126127e6"
 
       def install
         bin.install "muss"
@@ -29,7 +29,7 @@ class Muss < Formula
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/get-bridge/muss/releases/download/v0.10/muss_0.10_Linux_arm64.tar.gz"
-      sha256 "86676f8b1400c8e3b7c1094199a22d43c35b770c375986fce908520d26904c96"
+      sha256 "e829fcd1884ae0f68e1f0b839e951e90f360013db5fd3d03f8c5c97ca2bdda7d"
 
       def install
         bin.install "muss"
@@ -37,7 +37,7 @@ class Muss < Formula
     end
     if Hardware::CPU.intel?
       url "https://github.com/get-bridge/muss/releases/download/v0.10/muss_0.10_Linux_x86_64.tar.gz"
-      sha256 "4b67bc4abb4eec5ae71082350b75eceb0cac4d37deaa4ba5271fce8fb767f0ca"
+      sha256 "11fc7f3061aa177cfefa88043597d220bf83e51f991bc513d65c3176818303ef"
 
       def install
         bin.install "muss"
